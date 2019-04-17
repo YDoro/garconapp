@@ -1,7 +1,7 @@
 
 $('.collection').on('click', '.collection-item', function () {
     var $badge = $('.badge', this);
-    var nomeProduto = this.firstChild.textContent; 
+    var nomeProduto = this.firstChild.textContent;
     Materialize.toast(nomeProduto + '	adicionado', 1000);
     //correção aplicada por mim para não dar erro na hora de fazer parse em um text vazio
     if ($badge.text() === "") { $badge.text('0'); }
@@ -28,6 +28,14 @@ $('.collection').on('click', '.badge', function () {
     var $parent = this.parentNode;
     $(this).remove();
     //correção para evitar erro ao remover esse nó, não contava pois o nó badge não existia
-    $('<span	class="badge	brown-text"></span>').appendTo($parent);     
+    $('<span	class="badge	brown-text"></span>').appendTo($parent);
     return false;
 })
+$('.acao-limpar').on('click', function () {
+    $('#numero-mesa').val('');
+    $('.badge').parent().each(function () {
+        //correção para a remoção, função descrita no livro gera um erro pois remove o badge inteiro ao invés de somente seus valores
+        if (this.lastChild.textContent !== "") this.lastChild.textContent = "";
+    });
+});
+
