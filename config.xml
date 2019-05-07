@@ -16,7 +16,6 @@
     <allow-intent href="tel:*" />
     <content src="index.html" />
     <engine name="android" />
-    <engine name="browser" spec="^5.0.4" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
@@ -28,4 +27,5 @@
     <plugin name="phonegap-plugin-barcodescanner" spec="^8.0.1">
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
     </plugin>
+    <engine name="browser" spec="^5.0.4" />
 </widget>
