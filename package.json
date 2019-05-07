@@ -8,5 +8,22 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Apache Cordova Team",
-    "license": "Apache-2.0"
+    "license": "Apache-2.0",
+    "cordova": {
+        "platforms": [
+            "android",
+            "browser"
+        ],
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "phonegap-plugin-barcodescanner": {
+                "ANDROID_SUPPORT_V4_VERSION": "27.+"
+            }
+        }
+    },
+    "dependencies": {
+        "cordova-browser": "^5.0.4",
+        "cordova-plugin-whitelist": "1",
+        "phonegap-plugin-barcodescanner": "^8.0.1"
+    }
 }
