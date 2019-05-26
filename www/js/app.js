@@ -11,7 +11,7 @@ $('.acao-finalizar').on('click', function () {
         success: function (dados) {
             Materialize.toast(dados, 2000);
             $('#numero-mesa').val('');
-            $('.badge').remove();
+            $('.badge').parent().each(function (){  this.lastChild.textContent =''});//linha corrigida para evitar erro de NaN ao enviar o pedido
         }
     });
 });
